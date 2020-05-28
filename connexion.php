@@ -5,7 +5,7 @@
 
 session_start();
 
-if(isset($_POST['connexion'])) 
+if(isset($_POST['connexion']))
 {
 	if (empty($_POST['login']))
 	{
@@ -13,12 +13,12 @@ if(isset($_POST['connexion']))
 	}
 	else
 	{
-		if(empty($_POST['password'])) 
+		if(empty($_POST['password']))
 		{
 			echo "il manque votre mot de passe.";
 		}
 		else {
-			
+
 			$login= htmlentities($_POST['login']);
 			$password= htmlentities($_POST['password']);
 
@@ -28,12 +28,12 @@ if(!$mysqli){
 	echo "erreur de connexion";
 }
 
-	
+
 	else {
-	
+
 	$_SESSION['login'] = $login;
-	
-header('location: profil.php');	
+	echo "vous êtes connecté";
+header('location: profil.php');
 }
 }
 }
@@ -55,9 +55,9 @@ header('location: profil.php');
 
 
 <body>
-	
 
-	
+
+
 <h1> Connexion  </h1>
 
 <h2> Remplissez le formulaire pour vous connecter</h2>
@@ -71,11 +71,10 @@ header('location: profil.php');
 <input type="submit" name="connexion" value="connexion" />
 
 </form>
-	
-<a href="index.php">Retour à l'accueil</a>	
+
+<a href="index.php">Retour à l'accueil</a>
 <a href="inscription.php">J'ai besoin de m'inscrire pour continuer</a>
 </body>
 
 
 </html>
-

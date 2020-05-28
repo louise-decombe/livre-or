@@ -1,10 +1,6 @@
 
 <?php
-
-
-
-
-
+session_start();
 $bdd= array();
 $bdd['host']="localhost";
 $bdd['user']="root";
@@ -13,7 +9,6 @@ $bdd["name"]="livreor";
 $mysqli = mysqli_connect($bdd['host'], $bdd['user'],$bdd['mdp'], $bdd['name']);
 
 if (!$mysqli) {
-	
 	echo "problème de connexion.";
 	exit;
 }
@@ -21,28 +16,25 @@ if (!$mysqli) {
 
 $monform=1;
 
-if(isset($_POST['login'], $_POST['password'])) 
+if(isset($_POST['login'], $_POST['password']))
 {
 	if(empty($_POST['login']))
 	{
 		"il manque le login";
 	}
-	
+
 	elseif (empty($_POST['password'])) {
 		echo "il manque le mot de passe";
 	}
-	
+
 	else {
-		
-		
-	
-		
+
 		if (!mysqli_query($mysqli, "INSERT INTO utilisateurs SET login='".$_POST['login']."', password='".md5($_POST['password'])."'")) {
-			
+
 			echo "une erreur est arrivée :".mysqli_error($mysqli);
 		}
 		else {
-			echo "vous voilà inscrit";
+		header ("location:connexion.php");
 			$monform=0;
 		}
 	}
@@ -67,9 +59,9 @@ if(isset($_POST['login'], $_POST['password']))
 
 
 <body>
-	
 
-	
+
+
 <h1> Inscription  </h1>
 
 <h2> Remplissez le formulaire pour vous inscrire</h2>
@@ -86,9 +78,9 @@ if(isset($_POST['login'], $_POST['password']))
 
 </form>
 
-<a href="index.php">Retour à l'accueil</a>	
+<a href="index.php">Retour à l'accueil</a>
 
-	
+
 </body>
 
 

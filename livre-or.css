@@ -3,6 +3,9 @@
 padding: 0;
 margin : 0;
 background-color:white;
+display: flex;
+flex-direction: column;
+align-items: center;
 }
 
 
@@ -40,4 +43,5 @@ text-align:center;
 a {
 font-family: 'Arima Madurai', cursive;
 text-align:center;
+text-decoration:none;
 }
