@@ -8,11 +8,8 @@
 
 </head>
 
-
 <body>
-	
 
-	
 <h1> Bienvenue sur le livre d'or  </h1>
 
 <h2> Pour signer le livre connectez vous </h2>
@@ -21,10 +18,10 @@
 
 
 <h2>Si vous n'avez pas de compte inscrivez-vous</h2>
-	
+
 	<a href="inscription.php">Inscription</a>
-	
-	
+
+
 </body>
 
 

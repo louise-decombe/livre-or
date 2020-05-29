@@ -1,6 +1,8 @@
 
 <?php
+//la session démarre
 session_start();
+//connexion à la base de donnée
 $bdd= array();
 $bdd['host']="localhost";
 $bdd['user']="root";
@@ -8,6 +10,7 @@ $bdd['mdp']="";
 $bdd["name"]="livreor";
 $mysqli = mysqli_connect($bdd['host'], $bdd['user'],$bdd['mdp'], $bdd['name']);
 
+//si la connexion ne fonctionne pas message d'erreur
 if (!$mysqli) {
 	echo "problème de connexion.";
 	exit;
@@ -15,7 +18,7 @@ if (!$mysqli) {
 
 
 $monform=1;
-
+//si les champs de login et de password sont remplis dans le formulaire
 if(isset($_POST['login'], $_POST['password']))
 {
 	if(empty($_POST['login']))
@@ -28,11 +31,12 @@ if(isset($_POST['login'], $_POST['password']))
 	}
 
 	else {
-
+//requête d'insertion dans la base de donnée
 		if (!mysqli_query($mysqli, "INSERT INTO utilisateurs SET login='".$_POST['login']."', password='".md5($_POST['password'])."'")) {
-
+//si la requête ne fonctionne pas affichage d'une erreur
 			echo "une erreur est arrivée :".mysqli_error($mysqli);
 		}
+//si la requête est correctement exécutée redirection vers la page de connexion
 		else {
 		header ("location:connexion.php");
 			$monform=0;
@@ -41,11 +45,6 @@ if(isset($_POST['login'], $_POST['password']))
 }
 
 ?>
-
-
-
-
-
 
 <!doctype html>
 <html lang="fr">
@@ -57,10 +56,7 @@ if(isset($_POST['login'], $_POST['password']))
 
 </head>
 
-
 <body>
-
-
 
 <h1> Inscription  </h1>
 
@@ -68,12 +64,11 @@ if(isset($_POST['login'], $_POST['password']))
 
 <form method="post" action="inscription.php">
 
-
 <p>Login</p><input type="text" name="login">
 <br />
 <p>Password</p><input type="password" name="password">
 <br />
-<input type="submit" value="inscription">
+<input type="submit" value="inscription" class="form-submit-button">
 
 
 </form>

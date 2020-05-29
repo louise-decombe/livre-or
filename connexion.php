@@ -2,26 +2,34 @@
 
 <?php
 
-
+//la session démarre
 session_start();
 
+if(isset($_SESSION['login'])){
+	echo "vous etes en ligne actuellement <br />";
+	echo "<a href=profil.php> voir mon profil </a> ou <a href=index.php> retour à l'accueil </a> ou <a href=commentaire.php> signer le livre d'or </a> ";
+
+	exit;
+}
+//si la connexion est faite depuis la formulaire et le bouton submit
 if(isset($_POST['connexion']))
 {
+	// vérification que les champs de login et password sont bien remplis
 	if (empty($_POST['login']))
 	{
-		echo "il manque votre login.";
+		echo "<h2><i>il manque votre login.</i></h2>";
 	}
 	else
 	{
 		if(empty($_POST['password']))
 		{
-			echo "il manque votre mot de passe.";
+			echo "<h2><i>il manque votre mot de passe.</i></h2>";
 		}
 		else {
 
 			$login= htmlentities($_POST['login']);
 			$password= htmlentities($_POST['password']);
-
+//connexion à la base de donnée
 $mysqli= mysqli_connect ("localhost","root","","livreor");
 
 if(!$mysqli){
@@ -30,7 +38,7 @@ if(!$mysqli){
 
 
 	else {
-
+//si la session démarre, redirection vers la page de profil de l'utilisateur
 	$_SESSION['login'] = $login;
 	echo "vous êtes connecté";
 header('location: profil.php');
@@ -39,24 +47,18 @@ header('location: profil.php');
 }
 }
 
-
-
 ?>
 
 <!doctype html>
 <html lang="fr">
 <head>
   <meta charset="utf-8">
-  <title>Titre de la page</title>
   <link rel="stylesheet" href="livre-or.css">
   <link href="https://fonts.googleapis.com/css2?family=Arima+Madurai:wght@300&family=Roboto&display=swap" rel="stylesheet">
 
 </head>
 
-
 <body>
-
-
 
 <h1> Connexion  </h1>
 
@@ -68,7 +70,7 @@ header('location: profil.php');
 <br />
 <p>Password</p> <input type="password" name="password" value=""/>
 <br />
-<input type="submit" name="connexion" value="connexion" />
+<input type="submit" name="connexion" value="connexion" class="form-submit-button"/>
 
 </form>
 
