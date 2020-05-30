@@ -1,0 +1,266 @@
+/* Général*/
+* {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+a {
+  text-decoration: none;
+  color:#B07156;
+  font-family: "Roboto",cursive;
+  padding: 1%;
+  border-radius: 10px;
+
+}
+
+a:hover{
+  color:white;
+  background-color: #B07156;
+}
+
+input[type="submit"]
+{
+    line-height: 100%;
+    border: 0;
+    background: #B07156;
+    color: white;
+    text-decoration: none;
+    padding: 3%;
+    margin: 1%;
+    border-radius: 10px;
+}
+
+input[type="submit"]:hover
+{
+    border: 0;
+    background: white; /* ou transparent je sais plus... */
+    color: black;
+    text-decoration: none; /* Normalement */
+    padding: 3%;
+    margin: 1%;
+}
+
+img {
+  width: 20px;
+  height: 20px;
+  margin: 1%;
+}
+
+h1 {
+  color: #B07156;
+  font-size: 40px;
+  text-align: center;
+  padding: 1%;
+  font-family: 'Arima Madurai', cursive;
+}
+
+h2 {
+  color: white;
+  font-size: 20px;
+  padding: 1%;
+  font-family: 'Arima Madurai', cursive;
+}
+
+p {
+  font-family: 'Roboto', sans-serif;
+  color: #533745;
+}
+
+footer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: center;
+  margin: 3%;
+}
+
+img {
+  width: 40%;
+  height: 40%;
+}
+
+/* page index.php */
+.cuisine {
+  border-radius: 10px;
+  border-radius: 53px 0px 53px 0px;
+  -moz-border-radius: 53px 0px 53px 0px;
+  -webkit-border-radius: 53px 0px 53px 0px;
+  border: 0px solid #000000;
+}
+
+.formulaire_acces {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 1%;
+  font-family: Roboto, cursive;
+  background-color: #AB4E68;
+  border-radius: 10px;
+  margin: 2%;
+}
+
+.formulaire_acces a {
+  background-color: #533745;
+  color: white;
+  padding: 2%;
+  margin: 2%;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.formulaire_acces a:hover {
+  background-color: #B07156;
+}
+
+.formulaire_access_part1 {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  background-color: #AB4E68;
+}
+
+.formulaire_access_part2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: #AB4E68;
+}
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 50%;
+}
+
+.logo {
+  width: 15%;
+  display: flex;
+  align-items: center;
+}
+
+.header_index {
+  background-color: #AB4E68;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: white;
+  width: 100%;
+  height: 100px;
+}
+
+.header_index a {
+  display: flex;
+  flex-direction: row;
+  text-decoration: none;
+  color: white;
+  font-family: 'Arima Madurai', cursive;
+  margin: 10%;
+}
+
+.header_index a:hover {
+  text-decoration: none;
+  color: #C4A287;
+  text-decoration: overline;
+}
+
+.header_index p {
+  color: white;
+  font-family: 'Arima Madurai', cursive;
+  padding: 2%;
+
+}
+
+/* page profil.php */
+
+.formulaire_profil{
+background-color: #AB4E68;
+text-align: center;
+font-family: 'Roboto', sans-serif;
+padding: 5%;
+width: 100%;
+}
+
+.formulaire_profil td {
+  color:white;
+}
+
+.formulaire_profil input {
+  padding: 2%;
+  margin: 4%;
+  font-style: italic;
+}
+
+.profil_modif {
+  display: flex;
+  flex-direction: column;
+  width:100%;
+  height: auto;
+}
+
+.deconnect {
+  font-size: 30px;
+  width: 100%;
+}
+
+.or {
+  width: 100%;
+  font-size: 20px;
+  margin: 1%;
+  height: auto;
+}
+
+
+/* page inscription.php */
+
+.formulaire_inscription{
+font-size: 20px;
+background-color: #AB4E68;
+padding: 5%;
+text-align: center;
+font-family: 'Roboto', sans-serif;
+margin: 2%;
+}
+
+.formulaire_inscription p {
+  color:white;
+  padding: 2%;
+}
+
+.lien_inscription a{
+  text-decoration: none;
+  font-family: 'Arima Madurai', cursive;
+}
+
+.lien_inscription a:hover{
+  color: white;
+  background-color: #C4A287;
+  font-family: 'Arima Madurai', cursive;
+}
+
+/* page connexion.php */
+h4 {
+  color: #AB4E68;
+  font-family: 'Arima Madurai', cursive;
+}
+
+/* page commentaire.php */
+
+.formulaire_commentaire {
+
+}
+
+textarea {
+
+  margin: 5%;
+  width: 400px;
+  height: 50px;
+}
+
+/* page livre-or.php */

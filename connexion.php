@@ -4,10 +4,25 @@
 
 //la session démarre
 session_start();
+?>
+
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+<link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Arima+Madurai:wght@300&family=Roboto&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<?php
 
 if(isset($_SESSION['login'])){
-	echo "vous etes en ligne actuellement <br />";
-	echo "<a href=profil.php> voir mon profil </a> ou <a href=index.php> retour à l'accueil </a> ou <a href=commentaire.php> signer le livre d'or </a> ";
+	echo "<h4>vous etes en ligne actuellement</h4> <br />";
+	echo "<a href=profil.php>voir mon profil </a> ou <a href=index.php>retour à l'accueil </a> ou <a href=commentaire.php>
+	signer le livre d'or</a> ";
 
 	exit;
 }
@@ -48,17 +63,6 @@ header('location: profil.php');
 }
 
 ?>
-
-<!doctype html>
-<html lang="fr">
-<head>
-  <meta charset="utf-8">
-  <link rel="stylesheet" href="livre-or.css">
-  <link href="https://fonts.googleapis.com/css2?family=Arima+Madurai:wght@300&family=Roboto&display=swap" rel="stylesheet">
-
-</head>
-
-<body>
 
 <h1> Connexion  </h1>
 

@@ -7,20 +7,27 @@ session_start();
 <html lang="fr">
 <head>
   <meta charset="utf-8">
-  <title>Le livre d'or</title>
-  <link rel="stylesheet" href="livre-or.css">
+<link rel="stylesheet" href="style.css">
 <link href="https://fonts.googleapis.com/css2?family=Arima+Madurai:wght@300&family=Roboto&display=swap" rel="stylesheet">
 
 </head>
 
-
-
+<div class="header_index">
+  <?php
+  if(isset($_SESSION['login'])){
+    echo ' <a href="profil.php">Bienvenu  '.$_SESSION['login'].'</a>';
+  }
+  else {
+    echo "<a href='connexion.php'> connexion </a>";
+  }?>
+  <a href=".php">Voir le livre d'or</a>
+</div>
+<main>
 <body>
 
-<h1> Voici tout ce qui est écrit sur le livre d'or </h1>
+<h1>Les signatures</h1>
 
     <?php
-
     try
     {
       //connexion à la base de donnée
@@ -45,13 +52,14 @@ session_start();
 
     ?>
 
+
     <?php
 if(isset($_SESSION['login'])){
 
-  echo "<a><a href=commentaire.php> Signez le livre d'or </a></h2>";
+  echo "<a href=commentaire.php><p> Signez le livre d'or</p> </a>";
 }
 else {
-  echo "<a href=connexion.php>Connectez vous pour signer le livre </a></h2>";
+  echo "<a href=connexion.php><p>Connectez vous pour signer le livre </p></a>";
 }
 
      ?>

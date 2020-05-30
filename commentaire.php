@@ -16,17 +16,43 @@ if (!$mysqli) {
 	echo "problème de connexion.";
 	exit;
 }
+?>
 
-// requête multiple
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+<link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Arima+Madurai:wght@300&family=Roboto&display=swap" rel="stylesheet">
+  </head>
+  <body>
+		<div class="header_index">
+			<?php
+			if(isset($_SESSION['login'])){
+				echo ' <a href="profil.php">Retour à votre profil  '.$_SESSION['login'].'</a>';
+			}
+			else {
+				echo "<a href='connexion.php'> connexion </a>";
+			}?>
+			<a href="livre-or.php">Voir le livre d'or</a>
+			</div>
+</div>
 
+<div class="formulaire_commentaire">
+
+<form class="post" method="post">
+<h1>Signez</h1><textarea name="commentaire" placeholder="votre commentaire"></textarea>
+<input type="submit" name="submit" value="poster le commentaire">
+</form>
+
+<?php
 // vérification que la session en cours existe
 if(isset($_SESSION['login'])){
 // vérification que le bouton submit du formulaire a été cliqué
 if(isset($_POST['submit']))
 {
 
-	$id=("SELECT * FROM commentaires INNER JOIN utilisateurs ON commentaires.id_utilisateur = utilisateurs.id");
-
+$id=("SELECT * FROM commentaires INNER JOIN utilisateurs ON commentaires.id_utilisateur = utilisateurs.id");
 $commentaire=($_POST['commentaire']);
 date_default_timezone_set('Europe/Paris');
 $date=date('Y-m-d h:i:s');
@@ -42,29 +68,9 @@ echo "votre signature a été bien enregistrée";
 	}
 
 ?>
+</div>
 
+<img src="cuisine2.jpeg" alt="" class="cuisine">
 
-
-<!DOCTYPE html>
-<html lang="fr" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="livre-or.css">
-  <link href="https://fonts.googleapis.com/css2?family=Arima+Madurai:wght@300&family=Roboto&display=swap" rel="stylesheet">
-  </head>
-  <body>
-
-<h2>Poster un commentaire</h2>
-
-<form class="post" method="post">
-Votre commentaire<textarea name="commentaire" placeholder="votre commentaire"></textarea>
-<input type="submit" name="submit" value="poster le commentaire">
-</form>
-
-<footer>
-  <a href="index.php">Retour à accueil</a>
-  <a href="profil.php"> Mon profil</a>
-  <a href="livre-or.php">Voir le livre d'or</a>
-</footer>
   </body>
 </html>

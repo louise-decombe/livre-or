@@ -2,6 +2,10 @@
 <?php
 //la session démarre
 session_start();
+
+?>
+
+<?php
 //si la demande déconnexion existe, fin de la session
       if(isset($_GET['deconnexion'])){
 
@@ -27,32 +31,44 @@ echo "<p>Vous avez été déconnecté</p><br><p>Redirection vers la page d'accue
 <html lang="fr">
 <head>
   <meta charset="utf-8">
-<link rel="stylesheet" href="livre-or.css">
+<link rel="stylesheet" href="style.css">
 <link href="https://fonts.googleapis.com/css2?family=Arima+Madurai:wght@300&family=Roboto&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
+  <div class="header_index">
+    <?php
+    if(isset($_SESSION['login'])){
+      echo ' <p> Voici votre profil '.$_SESSION['login'].'</p>';
+    }
+    else {
+      echo "<a href='connexion.php'> connexion </a>";
+    }?>
+    <a href="livre-or.php">Voir le livre d'or</a>
+  </div>
 <main>
+
+<div class="profil_modif">
 
   <?php
 //si la session est démarrée l'utilisateur est accueilli par le nom de son login
   if(isset($_SESSION['login'])){
-    echo '<h2>Bon retour parmi nous<h2>'.$_SESSION['login'].'';
-  }
+    }
   // si la session n'existe pas possibilité de se connecter ou de s'inscrire
   else {
    echo "vous devez vous <a href=connexion.php> connectez </a> pour voir votre profil ou vous <a href=inscription.php> inscrire </a>";
   }
    ?>
+<img src="logo.png" alt="">
+<div class="or">
 
 <a href="commentaire.php">Signer le livre d'or</a>
+</div>
 
-<a href="livre-or.php">voir le livre d'or</a>
 
-
-<h2> Modifiez vos informations </h2>
-<div class="formdiv">
+<div class="formulaire_profil">
+  <h2> Modifiez vos informations </h2>
 
 <form class="" action="profil.php" method="post">
 <table>
@@ -72,24 +88,24 @@ Entrez le nouveau login
   <td> <input type="password" name="newpassword" value=""> </td>
   </tr>
   <tr>
-    <td>Re entrz votre nouveau password</td>
+    <td>Confirmez votre nouveau password</td>
     <td> <input type="password" name="confirmnewpassword" value=""> </td>
   </tr>
 </table>
-<p> <input type="submit" name="" value="Update Password" class="form-submit-button"> </p>
+<p> <input type="submit" name="" value="Valider les modifications"> </p>
 </form>
 </div>
         <br>
-      <p>  Déconnexion <a href="profil.php?deconnexion">
-        cliquez ici</a> </p>
+    <div class="deconnect">
 
-      </main>
-</body>
-
-<footer>
+    <a href="profil.php?deconnexion">
+        Déconnexion </a>
 
 <a href="index.php"> retour à l'accueil</a>
+   </div>
+</div>
+</main>
 
-</footer>
+</body>
 
 </html>
