@@ -46,7 +46,7 @@ echo "<p>Vous avez été déconnecté</p><br><p>Redirection vers la page d'accue
 
 <div class="intro">
 
-<h1><img src="logo.png" alt="" class="logo">
+<h1><img src="img/logo.png" alt="" class="logo">
 
  My kitchen  </h1>
 
@@ -72,7 +72,7 @@ echo "<p>Vous avez été déconnecté</p><br><p>Redirection vers la page d'accue
 </div>
 
 
-  <img src="cuisine1.jpg" alt="" class="cuisine">
+  <img src="img/cuisine1.jpg" alt="" class="cuisine">
 </main>
 
 

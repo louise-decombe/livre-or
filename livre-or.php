@@ -26,6 +26,7 @@ session_start();
 <body>
 
 <h1>Les signatures</h1>
+<img src="img/cuisine3.png" alt="">
 
     <?php
     try

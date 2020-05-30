@@ -60,7 +60,7 @@ echo "<p>Vous avez été déconnecté</p><br><p>Redirection vers la page d'accue
    echo "vous devez vous <a href=connexion.php> connectez </a> pour voir votre profil ou vous <a href=inscription.php> inscrire </a>";
   }
    ?>
-<img src="logo.png" alt="">
+<img src="img/logo.png" alt="">
 <div class="or">
 
 <a href="commentaire.php">Signer le livre d'or</a>

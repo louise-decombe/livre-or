@@ -70,7 +70,7 @@ echo "votre signature a été bien enregistrée";
 ?>
 </div>
 
-<img src="cuisine2.jpeg" alt="" class="cuisine">
+<img src="img/cuisine2.jpeg" alt="" class="cuisine">
 
   </body>
 </html>

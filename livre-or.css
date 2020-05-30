@@ -1,0 +1,81 @@
+* {
+  padding: 0;
+  margin: 0;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  color: black;
+  font-size: 50px;
+  text-align: center;
+  padding: 1%;
+  font-family: 'Arima Madurai', cursive;
+}
+
+h2 {
+color:navy;
+font-size:30px;
+padding: 1%;
+font-family: 'Arima Madurai', cursive;
+}
+
+form {
+  background-color: white;
+  color: black;
+  text-align: center;
+  padding: 1%;
+  font-family: 'Roboto', sans-serif;
+}
+
+p {
+  font-family: 'Roboto', sans-serif;
+  color:navy;
+}
+
+
+a {
+  font-family: 'Arima Madurai', cursive;
+  text-align: center;
+  text-decoration: none;
+  color:black;
+}
+
+a:hover {
+color:orange;
+}
+
+.formdiv {
+
+background-color:red;
+color:white;
+}
+
+.form-submit-button {
+background: #B9DFFF;
+color: #fff;
+border: 1px solid #eee;
+border-radius: 20px;
+box-shadow: 5px 5px 5px #eee;
+text-shadow:none;
+}
+
+.form-submit-button:hover {
+background: #016ABC;
+color: #fff;
+border: 1px solid #eee;
+border-radius: 20px;
+box-shadow: 5px 5px 5px #eee;
+text-shadow:none;
+
+}
+
+footer {
+
+display: flex;
+flex-direction: row;
+align-items: center;
+
+}
