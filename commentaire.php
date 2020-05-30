@@ -54,6 +54,7 @@ if(isset($_POST['submit']))
 
 $id=("SELECT * FROM commentaires INNER JOIN utilisateurs ON commentaires.id_utilisateur = utilisateurs.id");
 $commentaire=($_POST['commentaire']);
+
 date_default_timezone_set('Europe/Paris');
 $date=date('Y-m-d h:i:s');
 $id_utilisateur=($_SESSION['id']);
