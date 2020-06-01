@@ -1,4 +1,3 @@
-
 <?php
 //je démarre la session
 session_start();
@@ -57,8 +56,7 @@ $commentaire=($_POST['commentaire']);
 
 date_default_timezone_set('Europe/Paris');
 $date=date('Y-m-d h:i:s');
-$id_utilisateur=($_SESSION['id']);
-mysqli_query($mysqli, "INSERT INTO `commentaires`( `commentaire`,`date`,`id_utilisateur`) VALUES ('$commentaire','$date','$id_utilisateur')");
+mysqli_query($mysqli, "INSERT INTO `commentaires`( `commentaire`,`date`,`id_utilisateur`) VALUES ('$commentaire','$date','$id')");
 }
 //si la zone de texte est vide au moment du submit, demande de la remplir
 	if(empty($_POST['submit']))
