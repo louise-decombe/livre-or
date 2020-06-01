@@ -1,3 +1,5 @@
+
+
 <?php
 
 session_start();
@@ -41,17 +43,18 @@ session_start();
     }
 // requête à la bdd
 
-    $reponse = $bdd->query('SELECT * FROM commentaires, utilisateurs');
-    $donnees = $reponse->fetch();
+   $reponse = $bdd->query(' SELECT commentaire, id_utilisateur, date, login FROM commentaires, utilisateurs
+            WHERE commentaires.id_utilisateur = utilisateurs.id ORDER BY date DESC ');
+   $donnees = $reponse->fetch();
 // la boucle démarre pour afficher les commentaires
-    while ($donnees = $reponse->fetch())
-    {
-    	echo $donnees['commentaire'].'<br />'.'posté le :   '. $donnees['date'] . '<br />'. 'par     '. $donnees['login']. '<br />';
-    }
+   while ($donnees = $reponse->fetch())
+   {
+     echo $donnees['commentaire'].'<br />'.'posté le :   '. $donnees['date'] . '<br />'. 'par     '. $donnees['login']. '<br />';
+   }
 //fin de la requête
-    $reponse->closeCursor();
+   $reponse->closeCursor();
 
-    ?>
+   ?>
 
 
     <?php
